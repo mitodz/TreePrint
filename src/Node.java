@@ -40,7 +40,6 @@ class Node {
 
     }
 
-
     public int getNumber() {
         return number;
     }

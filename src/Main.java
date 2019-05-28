@@ -2,17 +2,22 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner("3\n" +
+                "2 1 2\n" +
+                "1 -1 -1\n" +
+                "2 -1 -1");
         int n = sc.nextInt();
-        Node[] a = new Node[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = new Node(sc.nextInt(), sc.nextInt(), sc.nextInt());
+        if (n==0 || n==1) {
+            System.out.println("CORRECT");
+        } else {
+            Node[] a = new Node[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = new Node(sc.nextInt(), sc.nextInt(), sc.nextInt());
+            }
+            a[0].checkTree(a, a[0]);
+            a[0].checkPrint();
         }
-        a[0].printTree(a, a[0]);
-        System.out.println();
-        a[0].prePrintTree(a, a[0]);
-        System.out.println();
-        a[0].postPrintTree(a, a[0]);
     }
 }
